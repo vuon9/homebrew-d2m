@@ -1,4 +1,4 @@
-# D2m Homebrew Tap
+# vuon9/d2m Homebrew Tap
 
 This repository contains cask for use with Homebrew: https://brew.sh
 
@@ -19,4 +19,4 @@ Additionally, use `--no-quarantine` with `brew install` on `arm64` machines, whi
 
 To upgrade manually, run `brew upgrade --cask d2m`.
 
-To uninstall, run `brew uninstall --cask d2m`. Additionally you can use `--zap` to remove app-data and if you want to remove the tap after uninstall, run `brew untap th-ch/d2m`.
+To uninstall, run `brew uninstall --cask d2m`. Additionally you can use `--zap` to remove app-data and if you want to remove the tap after uninstall, run `brew untap vuon9/d2m`.

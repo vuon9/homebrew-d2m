@@ -13,7 +13,7 @@ cask "d2m" do
   odie "Cannot find the latest version" if (latest_url.nil?)
   latest_release = latest_url.delete_prefix("#{release_url}/tag/")
 
-  version latest_release
+  version "1.3.1"
 
   # e.g: d2m-v1.3.1-darwin-amd64.tar.gz
   base_url = "#{release_url}/download/#{latest_release}/d2m-#{latest_release}-darwin"
@@ -25,14 +25,15 @@ cask "d2m" do
   sha256 :no_check
 
   # Decompress and copy to Homebrew user bin folder
-  bin_path = "/usr/local/bin/d2m2"
-  tarball_path = "#{HOMEBREW_CACHE}/d2m.tar.gz"
+  bin_path = "/usr/local/bin/d2m"
+  tarball_path = "#{HOMEBREW_CACHE}/Cask/d2m--#{latest_release}.tar.gz"
 
   system "tar -xzf #{tarball_path} -C #{HOMEBREW_CACHE}"
   system "mv #{HOMEBREW_CACHE}/d2m #{bin_path}"
 
   postflight do
-    print("Downloaded and installed d2m version #{latest_release} to #{bin_path}")
+    print("Downloaded and installed d2m version #{latest_release} to #{bin_path}\n")
+    print("* Note: Using Nerd Font supported font will gain more on the experience because most of indicators coming from NF. Have a look on one of them: https://www.nerdfonts.com/font-downloads\n")
     print("You can now run `d2m` from the terminal")
 
   end
